@@ -11,7 +11,7 @@ import os
 
 app = Flask(__name__)
 csrf = CSRFProtect(app)
-app.secret_key = "lfkjkdfjkldkljkjdjllkal"
+app.secret_key = os.environ.get("SECRET_KEY", "fallback-unsafe-key")
 
 # DataBase Configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///inventory.db'
