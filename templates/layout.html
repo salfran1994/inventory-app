@@ -23,6 +23,7 @@
                 {% if current_user.role=='admin' %}
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('manage_users') }}">Users</a></li>
                 {% endif %}
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('snapshots') }}">Snapshots</a></li>
             {% endif %}
         </ul>
     </div>

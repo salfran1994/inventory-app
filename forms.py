@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SelectField, IntegerField
+from wtforms import StringField, PasswordField, SelectField, IntegerField, SubmitField
 from wtforms.validators import DataRequired, EqualTo
 
 class RegisterForm(FlaskForm):
@@ -22,3 +22,10 @@ class EditItemForm(FlaskForm):
     quantity = IntegerField('Quantity', validators=[DataRequired()])
     category = StringField('Category', validators=[DataRequired()])
 
+class AddItemForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    quantity = IntegerField('Quantity')
+    category = StringField('Category', validators=[DataRequired()])
+
+class SnapshotForm(FlaskForm):
+    submit = SubmitField('Save Snapshot & Reset')

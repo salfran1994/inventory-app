@@ -3,18 +3,18 @@
 {% block content %}
 <h2>Edit Item</h2>
 <form method="POST">
-    <div class="col-12 col-mb-3">
-        <label>Name:</label>
-        <input class="form-control" name="name" value="{{ item.name }}" required>
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        {{ form.name.label }} {{ form.name(class="form-control") }}
     </div>
-    <div class="col-12 col-mb-3">
-        <label>Quantity:</label>
-        <input class="form-control" type="number" name="quantity" value="{{ item.quantity }}" required>
+    <div class="mb-3">
+        {{ form.quantity.label }} {{ form.quantity(class="form-control") }}
     </div>
-    <div class="col-12 col-mb-3">
-        <label>Category:</label>
-        <input class="form-control" name="category" value="{{ item.category }}" required>
+    <div class="mb-3">
+        {{ form.category.label }} {{ form.category(class="form-control") }}
     </div>
+
     <button class="btn btn-primary">Save</button>
     <a class="btn btn-secondary" href="{{ url_for('index') }}">Cancel</a>
 </form>

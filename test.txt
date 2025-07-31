@@ -11,3 +11,13 @@
             {% endif %}
         </div>
     </nav>
+    
+    
+    <form class="mb-4" method="POST" action="{{ url_for('add') }}">
+    <div class="row g-2">
+        <div class="col-12 col-md-3"><input class="form-control" name="name" placeholder="Item Name" required></div>
+        <div class="col-12 col-md-2"><input class="form-control" name="quantity" type="number" placeholder="Quantity" required></div>
+        <div class="col-12 col-md-3"><input class="form-control" name="category" placeholder="Category" required></div>
+        <div class="col-12 col-md-2"><button class="btn btn-success w-100">Add Item</button></div>
+    </div>
+</form>
