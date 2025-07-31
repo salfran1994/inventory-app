@@ -61,9 +61,7 @@ class SnapshotItem(db.Model):
     category = db.Column(db.String(100))
     snapshot_id = db.Column(db.Integer, db.ForeignKey('inventory_snapshot.id'))
 
-
-@app.before_first_request
-def create_tables():
+with app.app_context():
     db.create_all()
     if not User.query.filter_by(username="admin").first():
         admin = User(username="admin", role="admin")
